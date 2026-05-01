@@ -24,16 +24,21 @@ Intelligence: OpenAI API (gpt-5.4)
 
 Security: python-dotenv for environment variable management / Secret Key within Railway.
 
-Repository Structure
-data/: Source datasets including timesheet.csv, contracts.csv, and billing.csv.
+.streamlit/: Contains the config.toml file, which manages server-side configurations including port binding, network addresses, and security headers.
 
-scripts/: Contains the Test AI ML TP - Angel Yanciel Payano Lanfranco.ipynb notebook detailing the initial logic and AI integration tests.
+app.py: The primary application engine housing the relational data logic, mathematical validation rules, and the GPT-5.4 auditing prompts.  
 
-app.py: The main Python script powering the Streamlit web application.
+requirements.txt: A comprehensive list of all Python dependencies (Streamlit, Pandas, OpenAI, etc.) required to build the environment.  
 
-requirements.txt: Defines all dependencies required for local and cloud environments.
+Procfile: The explicit deployment instruction used by Railway to initialize the Streamlit server and bind it to the dynamic platform port.  
 
-.gitignore: Specifically configured to exclude sensitive .env files and Python cache.
+Test AI ML TP - Angel Yanciel Payano Lanfranco.ipynb: The original research notebook detailing the initial logic exploration and AI integration testing.
+
+Datasets (Root): The foundation files billing.csv, contracts.csv, and timesheet.csv are located in the root directory for direct access by the application.  
+
+.gitignore: Configured to ensure environment secrets, local caches, and temporary system files are not tracked by version control.
+
+README.md: The technical documentation and architectural overview of the AI Billing Auditor.
 
 Bonus Challenge: Multi-Client Scalability
 The architecture of this prototype is designed to support multiple clients and varying business rules without requiring any modifications to the core Python code or AI prompts.
